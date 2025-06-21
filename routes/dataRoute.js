@@ -1,8 +1,9 @@
-const express = require('express');
+import express from 'express';
+import { dataController } from '../controllers/dataController.js';
+
 const router = express.Router();
-const controller = require('../controllers/dataController');
 
-//  Single route for all 5 methods
-router.route('/api/data').all(controller);
+// Single route for all methods
+router.route('/data').all(dataController);
 
-module.exports = router;
+export default router;
